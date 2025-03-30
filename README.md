@@ -36,3 +36,18 @@ Dynamic DOM manipulation for creating and updating content
 CSS Variables and gradients for type-based styling
 
 Git & GitHub for version control and deployment
+
+## 🖼️ App Preview
+
+Here’s how the app looks in action:
+
+![Screenshot](img/DualType-filter.png)
+![Screenshot](img/dualType-searched.png)
+
+_Advanced search and dual-type filtering in action!_
+
+![Screenshot](img/Normal-searching.png)
+![Screenshot](img/Normal-searched.png)
+
+_Normal search in action_
+
