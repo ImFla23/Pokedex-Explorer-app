@@ -523,3 +523,134 @@ header {
 #firma a{
   margin: 0 5px;
 }
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+  #container-header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  header {
+    flex-direction: row;
+    padding: 0 10px;
+  }
+
+  #title {
+    font-size: 1.5rem;
+    right: 0;
+    position: static;
+    flex-grow: 0;
+  }
+
+  #icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  #super-research {
+    font-size: 2rem !important;
+  }
+
+  /* SEARCH BAR */
+  #search {
+    margin-top: 3rem;
+  }
+
+  .search-box {
+    width: 90%;
+  }
+
+  #search-input {
+    font-size: 1rem;
+  }
+
+  /* POKEBOX */
+  #pokebox {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem auto;
+  }
+
+  .Poke-container {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .Poke-container.clicked {
+    width: 95%;
+    flex-direction: column;
+  }
+
+  .Poke-container h2 {
+    font-size: 1rem;
+  }
+
+  .Poke-container h3 {
+    font-size: 1rem;
+    left: 10px;
+    top: 10px;
+  }
+
+  .Poke-container img {
+    width: 4rem;
+  }
+
+  .Poke-container p {
+    font-size: 1rem;
+  }
+
+  /* SIDEBAR */
+  #sidebar {
+    width: 100%;
+    right: -100rem;
+  }
+
+  #sidebar.open {
+    right: 0;
+  }
+
+  #sidebar button {
+    left: 11.5rem;
+    font-size: 1.5rem;
+    font-size: 30px;
+  }
+
+  #sidebar ul {
+    flex-flow: row wrap ;
+    gap: 10px;
+  }
+  #sidebar img{
+    width: 10rem;
+  }
+
+  /* SCROLL BUTTON */
+  #scroll-button {
+    right: 1rem;
+    bottom: 1rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /* NOT FOUND */
+  .notfound img {
+    width: 90%;
+  }
+
+  .notfound p {
+    font-size: 1.2rem;
+    bottom: 2rem;
+  }
+
+  /* FIRMA */
+  #firma {
+    font-size: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
