@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokèDex Online</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap"
+      rel="stylesheet"
+    />
+    
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  </head>
+
+
+  <body id="body">
+    <div id="container-header" >
+        <header>
+            <a href="#" id="icon"></a>
+            <h1 id="title">PokèDex</h1>
+            <input id="advanced-research" type="checkbox">
+            <label for="advanced-research" id="super-research" class="material-icons">manage_search</label>
+          </header>
+    </div>
+    
+
+    <div id="search">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search any Pokemon by name, generation or type..." />
+        <button id="search-btn"><i class="material-icons">search</i></button>
+      </div>
+    </div>
+
+    <div id="pokeball-box">
+      <div id="wrapper">
+        <div class="pokeball"></div>
+      </div>
+    </div>
+   
+    <div id="pokebox"></div>
+
+    <div class="notfound" id="notfound">
+      <img src="./img/Pokemon.png" alt="notFound">
+      <p>No results found in any category.</p>
+    </div>
+
+    <div id="sidebar">
+      <h1 id="title"></h1>
+      <ul id="type-list">
+        <li id="fire"></li>
+        <li id="water"></li>
+        <li id="grass"></li>
+        <li id="dark"></li>
+        <li id="fairy"></li>
+        <li id="ice"></li>
+        <li id="electric"></li>
+        <li id="psychic"></li>
+        <li id="dragon"></li>
+        <li id="bug"></li>
+        <li id="normal"></li>
+        <li id="ground"></li>
+        <li id="ghost"></li>
+        <li id="fighting"></li>
+        <li id="normal"></li>
+        <li id="rock"></li>
+        <li id="steel"></li>
+        <li id="flying"></li>
+        <li id="stellar"></li>
+      </ul>
+      <button id="submit-research">Done</button>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <button class="material-icons" id="scroll-button">arrow_upward</button>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
