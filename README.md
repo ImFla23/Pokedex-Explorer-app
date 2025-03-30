@@ -41,13 +41,13 @@ Git & GitHub for version control and deployment
 
 Here’s how the app looks in action:
 
-![Screenshot](img/Screenshot2025-03-30155924.png)
-![Screenshot](img/Screenshot2025-03-30155938.png)
+![Screenshot](img/DualType-filter.png)
+![Screenshot](img/dualType-searched.png)
 
 _Advanced search and dual-type filtering in action!_
 
-![Screenshot](img/Screenshot2025-03-30155553.png)
-![Screenshot](img/Screenshot2025-03-30155751.png)
+![Screenshot](Normal-searching.png)
+![Screenshot](img/Normal-searched.png)
 
 _Normal search in action_
 
