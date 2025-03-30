@@ -46,7 +46,7 @@ Here’s how the app looks in action:
 
 _Advanced search and dual-type filtering in action!_
 
-![Screenshot](Normal-searching.png)
+![Screenshot](img/Normal-searching.png)
 ![Screenshot](img/Normal-searched.png)
 
 _Normal search in action_
