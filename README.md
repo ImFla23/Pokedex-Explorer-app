@@ -1,9 +1,9 @@
-#PokèDex Explorer - Web App
+# PokèDex Explorer - Web App
 
 Pokémon Explorer is a lightweight, interactive web application that allows users to search, explore, and filter Pokémon using the PokéAPI.
 Users can search by name, ID, type, or generation, and view detailed information including stats, types, sprites, and more.
 
-##🔍 Features
+## 🔍 Features
 🔎 Search Pokémon by name or Pokédex ID
 
 📅 Search by generation (e.g. "generation 2")
@@ -24,7 +24,7 @@ Users can search by name, ID, type, or generation, and view detailed information
 
 🎮 Clean UI with smooth animations and a Pokéball loading spinner
 
-##🛠️ Technologies Used
+## 🛠️ Technologies Used
 HTML, CSS, JavaScript
 
 Vanilla JS for DOM interaction and events
