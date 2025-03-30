@@ -72,6 +72,8 @@ header {
   background-position: center;
   filter: drop-shadow(4px 4px 1px black);
   cursor: pointer;
+  padding: 10px;
+  z-index: 10000;
 }
 
 
@@ -508,4 +510,16 @@ header {
 
 .overlay.shown{
   display: block;
+}
+
+#firma{
+  display: flex;
+  font-size: 23px;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+#firma a{
+  margin: 0 5px;
 }
