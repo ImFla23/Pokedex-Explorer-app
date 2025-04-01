@@ -9,6 +9,7 @@ const overlay = document.getElementById('overlay')
 const sidebar = document.getElementById('sidebar')
 const ulType = document.getElementById('type-list')
 const liType = document.querySelectorAll('#type-list li')
+const ShuffleBtn = document.getElementById('surprise-me')
 
 //chiamata di tutti i tipi in automatico per precaricarli nella sidebar
 callImgTypes()
@@ -33,6 +34,10 @@ window.addEventListener('scroll', (e) => {
     }
 })
 
+ShuffleBtn.addEventListener('click',(e) => {
+    shufflePokedex()
+})
+
 //event listener della sidebar
 
 advancedResearch.addEventListener('click', (e) => {
@@ -43,6 +48,7 @@ advancedResearch.addEventListener('click', (e) => {
 overlay.addEventListener('click', (e) => {
     sidebar.classList.toggle('open')
     overlay.classList.toggle('shown')
+    clearResearch()
 })
 
 sidebar.addEventListener('click', async (e) => {
@@ -51,13 +57,13 @@ sidebar.addEventListener('click', async (e) => {
 
 
 //funzione per cercare per cercare
-async function search () {
+async function search (InputValue = searchInput.value) {
     let pokeLen = 0
     try{
         pokebox.innerHTML = ''
         notFound.classList.remove('visible')
+        pokebox.style.display = 'flex'
 
-        const InputValue = searchInput.value
         const linkApiNames = `https://pokeapi.co/api/v2/pokemon/${InputValue}`
         const linkApiTypes = `https://pokeapi.co/api/v2/type/${InputValue}`
         ShowSpinner()
@@ -103,7 +109,7 @@ async function search () {
 
 // funzione per renderizzare pokemon per nome
 
-async function renderPoke(data, ) {
+async function renderPoke(data) {
     try{
         const pokeCard = document.createElement('div')
         const pokeName = document.createElement ('h2')
@@ -244,6 +250,7 @@ async function renderGenerationPokemon (dataGeneration) {
 function clearResearch(){
     pokebox.innerHTML = ''
     notFound.classList.remove('visible')
+    pokebox.style.display = 'none'
 }
 
 
@@ -297,9 +304,9 @@ async function callImgTypes(){
 }
 
  //conto per limitare le selezioni
-  let selectedCount = 0
-  let selectedTypes = [];
-async function fetchSideBar(e) {
+    let selectedCount = 0
+    let selectedTypes = [];
+    async function fetchSideBar(e) {
     try{
       
         // Se clicchi sul pulsante
@@ -314,9 +321,17 @@ async function fetchSideBar(e) {
             // usa il primo tipo selezionato
             if (selectedTypes.length === 1) {
                 ShowSpinner()
+                notFound.classList.remove('visible')
+                pokebox.style.display = 'flex'
                 const linkApiTypesSidebar = `https://pokeapi.co/api/v2/type/${selectedTypes[0]}`;
                 const response = await fetch(linkApiTypesSidebar);
                 const data = await response.json();
+
+                if (data.pokemon.length === 0) {
+                    show404()
+                    hideSpinner()
+                    return
+                }
                 //uso map per iterare tutti i nomi e ritornarli in un array
                 const name1pokemon = data.pokemon.map(p => p.pokemon.name)
                 for (const pokeNames of name1pokemon){
@@ -357,6 +372,8 @@ async function fetchSideBar(e) {
 async function fetchDualType(type1, type2) {
     try {
         ShowSpinner()
+        pokebox.style.display = 'flex'
+        notFound.classList.remove('visible')
         const response1 = await fetch(`https://pokeapi.co/api/v2/type/${type1}`);
         const data1 = await response1.json();
         const pokename1 = data1.pokemon.map(p => p.pokemon.name)
@@ -368,15 +385,39 @@ async function fetchDualType(type1, type2) {
         // Filtra solo quelli presenti in entrambi  
         const dualType = pokename1.filter(name => pokename2.includes(name))
 
-        // Se vuoi fetchare i dettagli di ciascuno:
+        if (dualType.length === 0) {
+            show404()
+            hideSpinner()
+            return
+        }
+        
+
         for (const name of dualType) {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
             const data = await response.json();
-            renderPoke(data); // tua funzione esistente
+            renderPoke(data); 
         }
         hideSpinner()
 
     } catch (error) {
         console.error("Error accured in sidebar types research:", error);
     }
+}
+
+// funzione per prendere un pokemon a caso
+function shufflePokedex(){
+    //aggiunge e poco dopo rimuove la classe di animazione per il click del pulsante
+    ShuffleBtn.classList.add('bop')
+
+    setTimeout(() => {
+        ShuffleBtn.classList.remove('bop')
+    }, 300);
+    //numero a caso per id del pokemon (due diversi perchè PokeApi dopo il 1025 passa al 10001)
+    let randomArray = []
+    const randomNum = Math.floor(Math.random()* 1025 ) + 1
+    randomArray.push(randomNum)
+    const randomNum2 = Math.floor(Math.random() * (10277 - 10001 + 1)) + 10001
+    randomArray.push(randomNum2)
+    search(randomArray[Math.floor(Math.random()* 2)])
+    
 }
