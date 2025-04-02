@@ -174,7 +174,7 @@ async function renderPoke(data) {
 
                 for (const stats of data.stats) {
                     const pokestats = document.createElement('p')
-                    weight.textContent = `weight: ${data.weight} kg`
+                    weight.textContent = `weight: ${data.weight / 10} kg`
                     Height.textContent = `Height: ${data.height / 10} m`
                     pokestats.textContent = `${stats.stat.name}: ${stats.base_stat}`
                     await statsDiv.appendChild(pokestats)
