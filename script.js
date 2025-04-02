@@ -107,7 +107,7 @@ async function search (InputValue = searchInput.value) {
     
 }
 
-// funzione per renderizzare pokemon per nome
+// funzione per renderizzare pokemon 
 
 async function renderPoke(data) {
     try{
