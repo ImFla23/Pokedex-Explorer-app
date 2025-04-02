@@ -1,4 +1,3 @@
-
 *{
     font-family: "Fredoka", sans-serif;
     font-style: normal;
@@ -87,8 +86,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
-    margin: 20px 0;
+    gap: 5px;
     position: relative;
     margin-top: 6rem;
     
@@ -152,6 +150,33 @@ header {
   font-size: 35px !important;
 }
 
+
+#surprise-me{
+  box-shadow: 2px 3px 1px black;
+  background: white;
+  border: 2px solid black;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+@keyframes bop {
+  0%, 100%{transform: scale(1);}
+  50%{transform: scale(1.15);}
+}
+
+#surprise-me:hover{
+  transform: scale(1.05);
+  background-color: rgba(255, 0, 0, 1);
+}
+#surprise-me.bop{
+  animation: bop ease .3s;
+}
+
+#shuffle-title{
+  margin: 0;
+  font-size: 20px;
+}
 
 
 /* spinner poke */
@@ -230,7 +255,7 @@ header {
 
   /* pokemon card */
   #pokebox {
-    display: flex;
+    display: none;
     justify-content: space-evenly;
     align-items: center;
     flex-flow: row wrap;
