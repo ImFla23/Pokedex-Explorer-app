@@ -421,3 +421,21 @@ function shufflePokedex(){
     search(randomArray[Math.floor(Math.random()* 2)])
     
 }
+
+// funzione per prendere un pokemon a caso
+function shufflePokedex(){
+    //aggiunge e poco dopo rimuove la classe di animazione per il click del pulsante
+    ShuffleBtn.classList.add('bop')
+
+    setTimeout(() => {
+        ShuffleBtn.classList.remove('bop')
+    }, 300);
+    //numero a caso per id del pokemon (due diversi perchè PokeApi dopo il 1025 passa al 10001)
+    let randomArray = []
+    const randomNum = Math.floor(Math.random()* 1025 ) + 1
+    randomArray.push(randomNum)
+    const randomNum2 = Math.floor(Math.random() * (10277 - 10001 + 1)) + 10001
+    randomArray.push(randomNum2)
+    search(randomArray[Math.floor(Math.random()* 2)])
+    
+}
